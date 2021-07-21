@@ -29,6 +29,7 @@ If all assertions pass, then your solution will be accepted.
 ### Example:
 
 **_Input:_** `nums = [1,1,2]`
+
 **_Output:_** `2, nums = [1,2,_]`
 
 **_Explanation:_** Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
@@ -41,3 +42,18 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 `-100 <= nums[i] <= 100`
 
 `nums` is sorted in **non-decreasing** order.
+
+## Solution in JavaScript:
+
+```
+var removeDuplicates = function(nums) {
+    let j = 0
+    for (let i = 1; i <= nums.length; i++) {
+        if (nums[i - 1] !== nums[i] ) {
+            nums[j] = nums[i - 1]
+            j++
+            }
+    }
+    return j
+};
+```
